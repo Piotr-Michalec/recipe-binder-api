@@ -1,4 +1,10 @@
 const mongoose = require('mongoose');
+const format = require('date-format');
+
+let time = format.asString('hh:mm', new Date());
+let date = format.asString('dd:MM:yy', new Date());
+
+
 
 const PostSchema = mongoose.Schema({
     title: {
@@ -10,8 +16,8 @@ const PostSchema = mongoose.Schema({
         required: true
     },
     date: {
-        type: Date,
-        default: Date.now
+        type: String,
+        default: 'Added: '+time+" "+date
     },
 
 });

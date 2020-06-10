@@ -14,12 +14,6 @@ const postsRoute = require('./routes/posts')
 
 app.use('/posts',postsRoute);
 
-//Middlewares
-
-/* app.use('/posts',()=>{
-    console.log('post middleware')
-}); */
-
 //Routes
 app.get('/',(req,res)=>{
     res.send('this is home');
@@ -27,7 +21,6 @@ app.get('/',(req,res)=>{
 
 app.get('/posts',(req,res)=>{
     res.send('this is posts');
-
 });
 
 mongoose.connect(process.env.DB_CONNECT,
