@@ -2,6 +2,8 @@ const express = require("express");
 
 const cors = require("cors");
 
+const PORT = process.env.PORT || 8080;
+
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -29,4 +31,6 @@ mongoose.connect(process.env.DB_CONNECT,
 });
 
 
-app.listen(8080);
+app.listen(PORT, ()=>{
+    console.log(`App running on port ${PORT}`)
+});
